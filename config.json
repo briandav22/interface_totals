@@ -1,0 +1,9 @@
+{
+    "PG_CONFIG": {
+        "PG_HOST": "127.0.0.1",
+        "PG_DATABASE": "plixer",
+        "PG_USER": "scrutremote",
+        "PG_PASSWORD": "example-password"
+    },
+    "INTERFACE_LIST":["interface1","interface2"]
+}
