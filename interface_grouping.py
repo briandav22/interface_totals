@@ -10,7 +10,7 @@ fileDir = os.path.dirname(os.path.abspath(__file__))
 if os.path.exists(fileDir +'/aggregate_utilization.csv'):
     pass
 else:
-    with open('aggregate_utilization.csv', 'w', newline='') as csvfile:
+    with open(fileDir + '/aggregate_utilization.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         #set up values for column names
         writer.writerow(['Interface Description'] + ['Inbound Bytes'] + ['Outbound Bytes'] + ['Timestamp'] + ['Number of Interfaces Polled'])
@@ -94,7 +94,7 @@ def total_bytes(snmp_value):
     return interfaces
 
 #open up CSV and write in totals for last 5 minutes. 
-with open('aggregate_utilization.csv', mode='a', newline='') as interface_totals:
+with open(fileDir +'/aggregate_utilization.csv', mode='a', newline='') as interface_totals:
     interface_totals = csv.writer(interface_totals, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     #loop through each interface in the config and gather data, writing it out to CSV
     for interface in INTERFACE_LIST:
